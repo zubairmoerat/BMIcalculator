@@ -8,11 +8,11 @@ document.getElementById('calculateButton').addEventListener('click', function ()
 
         var category;
         if (bmi < 18.5) {
-            category = 'Underweight & start Bulking';
+            category = 'Underweight & Start Bulking';
         } else if (bmi >= 18.5 && bmi < 25) {
             category = 'Normal Weight';
         } else {
-            category = 'Overweight & start Cutting';
+            category = 'Overweight & Start Cutting';
         }
 
         resultElement.innerHTML = 'Your BMI is: ' + bmi.toFixed(2) + '<br>Category: ' + category;
