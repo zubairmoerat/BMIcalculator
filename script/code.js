@@ -8,15 +8,24 @@ document.getElementById('calculateButton').addEventListener('click', function ()
 
         var category;
         if (bmi < 18.5) {
-            category = 'Underweight & Start Bulking';
+            category = 'Underweight';
         } else if (bmi >= 18.5 && bmi < 25) {
             category = 'Normal Weight';
         } else {
-            category = 'Overweight & Start Cutting';
+            category = 'Overweight';
         }
 
-        resultElement.innerHTML = 'Your BMI is: ' + bmi.toFixed(2) + '<br>Category: ' + category;
-    } else {
+        var comment;
+        if (bmi < 18.5) {
+            comment = 'You need to eat more!!';
+        } else if (bmi >= 18.5 && bmi < 25) {
+            comment = 'You are on track';
+        } else {
+            comment = 'You need to eat less!!';
+        }
+
+        resultElement.innerHTML = 'Your BMI is: ' + bmi.toFixed(2) + '<br>Category: ' + category + '<br>Comment: ' + comment;
+        } else {
         document.getElementById('result').innerHTML = 'Please enter valid weight and height.';
     }
 });
